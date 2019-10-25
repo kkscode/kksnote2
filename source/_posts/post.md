@@ -37,27 +37,27 @@ categories: 探索笔记
 
 ## 腾讯云-创建VPN网关
 
-![腾讯云VPN网关](/images/tencent-vgw.png)
+![腾讯云VPN网关](/kksnote2/images/tencent-vgw.png)
 ***所属网络为要对联的VPC***
 
 ## GCP-创建VPN gateway
   
 Hybrid Connectivity -> VPN -> Cloud VPN Gateways -> Create VPN gateway. 由于似乎腾讯云不支持BGP，这里的VPN options我们选**Classic VPN**. 
   1. Reserve static ip
-   ![Reserve static ip](/images/gcp-reserve-ip.png)
+   ![Reserve static ip](/kksnote2/images/gcp-reserve-ip.png)
    这个ip记录下来，后面要用到。
   2. 腾讯云通道还没设置，下面的tunnels先删掉.
-   ![delete tunnels](/images/gcp-tunnels.png)
+   ![delete tunnels](/kksnote2/images/gcp-tunnels.png)
 
 ## 腾讯云-创建对端网关
 
-![对端网关](/images/tencent-op-vgw.png)
+![对端网关](/kksnote2/images/tencent-op-vgw.png)
 ip 为上一步**GCP的网关ip**
 
 ## 腾讯云-创建VPN通道
 
-![第一步](/images/tencent-vpn-tunnel1.png)
-![第二步](/images/tencent-vpn-tunnel2.png)
+![第一步](/kksnote2/images/tencent-vpn-tunnel1.png)
+![第二步](/kksnote2/images/tencent-vpn-tunnel2.png)
 本地网段: **腾讯云VPC的CIDR**
 对端网段: **GCP VPC的CIDR**
 
@@ -68,8 +68,8 @@ ip 为上一步**GCP的网关ip**
 - DH group: DH2
 - 安全协议: ESP
 - PFS: DH-GROUP2
-![腾讯云ike](/images/tencent-ike.png)
-![腾讯云ipsec](/images/tencent-ipsec.png)
+![腾讯云ike](/kksnote2/images/tencent-ike.png)
+![腾讯云ipsec](/kksnote2/images/tencent-ipsec.png)
 
 
 ## GCP: 建立 VPN Connections
@@ -82,8 +82,8 @@ Hybrid Connectivity -> VPN -> Cloud VPN Gateways -> 对应gateway -> Add VPN tun
   - Local subnetwork IP range: GCP要连通的CIDR
 
 这一步结束两端状态应该如下:
-    ![GCP状态](/images/gcp-tunnel-status.png)
-    ![腾讯云状态](/images/tencent-tunnel-status.png)
+    ![GCP状态](/kksnote2/images/gcp-tunnel-status.png)
+    ![腾讯云状态](/kksnote2/images/tencent-tunnel-status.png)
 
 ## 腾讯云-更新路由表
 
