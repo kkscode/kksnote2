@@ -92,4 +92,4 @@ theme: 3-hexo
 deploy:
   type: git
   repository: ssh://git@personal.github.com/kkscode/kksnote2.git
-  branch: gh-pages
+  branch: master
