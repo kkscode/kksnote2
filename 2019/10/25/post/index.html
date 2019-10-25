@@ -163,14 +163,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class=""
-           href="/kksnote2/2019/10/25/hello-world/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2019-10-25 16:42:13">2019/10/25</span>
-        </a>
-        
         <a  class="探索笔记 "
            href="/kksnote2/2019/10/25/post/"
            data-tag="GCP,tencent,vpc"
@@ -185,6 +177,14 @@
            data-author="" >
             <span class="post-title" title="[记]《知识分子的不幸》-王小波">[记]《知识分子的不幸》-王小波</span>
             <span class="post-date" title="2019-06-09 21:31:09">2019/06/09</span>
+        </a>
+        
+        <a  class=""
+           href="/kksnote2/2019/10/25/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-10-25 16:42:13">2019/10/25</span>
         </a>
         
     </nav>
@@ -227,7 +227,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-25 16:42:13'>2019-10-25 11:24</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-25 16:46:05'>2019-10-25 11:24</time>
         
     </div>
     <div class="article-meta">
@@ -303,14 +303,14 @@
 <li>腾讯云: 更新路由表</li>
 <li>测试连通</li>
 </ol>
-<h2 id="腾讯云-创建VPN网关"><a href="#腾讯云-创建VPN网关" class="headerlink" title="腾讯云-创建VPN网关"></a>腾讯云-创建VPN网关</h2><p><img src="/images/tencent-vgw.png" alt="腾讯云VPN网关"><br><strong><em>所属网络为要对联的VPC</em></strong></p>
+<h2 id="腾讯云-创建VPN网关"><a href="#腾讯云-创建VPN网关" class="headerlink" title="腾讯云-创建VPN网关"></a>腾讯云-创建VPN网关</h2><p><img src="/kksnote2/images/tencent-vgw.png" alt="腾讯云VPN网关"><br><strong><em>所属网络为要对联的VPC</em></strong></p>
 <h2 id="GCP-创建VPN-gateway"><a href="#GCP-创建VPN-gateway" class="headerlink" title="GCP-创建VPN gateway"></a>GCP-创建VPN gateway</h2><p>Hybrid Connectivity -&gt; VPN -&gt; Cloud VPN Gateways -&gt; Create VPN gateway. 由于似乎腾讯云不支持BGP，这里的VPN options我们选<strong>Classic VPN</strong>. </p>
 <ol>
-<li>Reserve static ip<br><img src="/images/gcp-reserve-ip.png" alt="Reserve static ip"><br>这个ip记录下来，后面要用到。</li>
-<li>腾讯云通道还没设置，下面的tunnels先删掉.<br><img src="/images/gcp-tunnels.png" alt="delete tunnels"></li>
+<li>Reserve static ip<br><img src="/kksnote2/images/gcp-reserve-ip.png" alt="Reserve static ip"><br>这个ip记录下来，后面要用到。</li>
+<li>腾讯云通道还没设置，下面的tunnels先删掉.<br><img src="/kksnote2/images/gcp-tunnels.png" alt="delete tunnels"></li>
 </ol>
-<h2 id="腾讯云-创建对端网关"><a href="#腾讯云-创建对端网关" class="headerlink" title="腾讯云-创建对端网关"></a>腾讯云-创建对端网关</h2><p><img src="/images/tencent-op-vgw.png" alt="对端网关"><br>ip 为上一步<strong>GCP的网关ip</strong></p>
-<h2 id="腾讯云-创建VPN通道"><a href="#腾讯云-创建VPN通道" class="headerlink" title="腾讯云-创建VPN通道"></a>腾讯云-创建VPN通道</h2><p><img src="/images/tencent-vpn-tunnel1.png" alt="第一步"><br><img src="/images/tencent-vpn-tunnel2.png" alt="第二步"><br>本地网段: <strong>腾讯云VPC的CIDR</strong><br>对端网段: <strong>GCP VPC的CIDR</strong></p>
+<h2 id="腾讯云-创建对端网关"><a href="#腾讯云-创建对端网关" class="headerlink" title="腾讯云-创建对端网关"></a>腾讯云-创建对端网关</h2><p><img src="/kksnote2/images/tencent-op-vgw.png" alt="对端网关"><br>ip 为上一步<strong>GCP的网关ip</strong></p>
+<h2 id="腾讯云-创建VPN通道"><a href="#腾讯云-创建VPN通道" class="headerlink" title="腾讯云-创建VPN通道"></a>腾讯云-创建VPN通道</h2><p><img src="/kksnote2/images/tencent-vpn-tunnel1.png" alt="第一步"><br><img src="/kksnote2/images/tencent-vpn-tunnel2.png" alt="第二步"><br>本地网段: <strong>腾讯云VPC的CIDR</strong><br>对端网段: <strong>GCP VPC的CIDR</strong></p>
 <p><a href="https://cloud.tencent.com/document/product/554/18989" target="_blank" rel="noopener">腾讯官方文档</a>.需要注意的是腾讯云只支持ikeV1,<a href="https://cloud.tencent.com/document/product/554/18904" target="_blank" rel="noopener">腾讯</a>和<a href="https://cloud.google.com/vpn/docs/concepts/supported-ike-ciphers#phase-1_3" target="_blank" rel="noopener">GCP</a>支持列表。综合起来设置为:</p>
 <ul>
 <li>密钥: 自己生成记录下来，在GCP端需要用到.</li>
@@ -318,7 +318,7 @@
 <li>认证算法: SHA1</li>
 <li>DH group: DH2</li>
 <li>安全协议: ESP</li>
-<li>PFS: DH-GROUP2<br><img src="/images/tencent-ike.png" alt="腾讯云ike"><br><img src="/images/tencent-ipsec.png" alt="腾讯云ipsec"></li>
+<li>PFS: DH-GROUP2<br><img src="/kksnote2/images/tencent-ike.png" alt="腾讯云ike"><br><img src="/kksnote2/images/tencent-ipsec.png" alt="腾讯云ipsec"></li>
 </ul>
 <h2 id="GCP-建立-VPN-Connections"><a href="#GCP-建立-VPN-Connections" class="headerlink" title="GCP: 建立 VPN Connections"></a>GCP: 建立 VPN Connections</h2><p>Hybrid Connectivity -&gt; VPN -&gt; Cloud VPN Gateways -&gt; 对应gateway -&gt; Add VPN tunnel</p>
 <ul>
@@ -328,7 +328,7 @@
 <li>Remote network IP range: 腾讯云VPN CIDR</li>
 <li>Local subnetwork IP range: GCP要连通的CIDR</li>
 </ul>
-<p>这一步结束两端状态应该如下:<br>    <img src="/images/gcp-tunnel-status.png" alt="GCP状态"><br>    <img src="/images/tencent-tunnel-status.png" alt="腾讯云状态"></p>
+<p>这一步结束两端状态应该如下:<br>    <img src="/kksnote2/images/gcp-tunnel-status.png" alt="GCP状态"><br>    <img src="/kksnote2/images/tencent-tunnel-status.png" alt="腾讯云状态"></p>
 <h2 id="腾讯云-更新路由表"><a href="#腾讯云-更新路由表" class="headerlink" title="腾讯云-更新路由表"></a>腾讯云-更新路由表</h2><p>私有网络 -&gt; 路由表 -&gt; 找到对应VPC路由表 -&gt; 新增路由策略</p>
 <ul>
 <li>目的端: GCP VPC CIDR</li>
@@ -349,7 +349,7 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">549</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="kks">kks</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-25, 11:24:33</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-25, 16:42:13</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-25, 16:46:05</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/kksnote2/2019/10/25/post/" title="腾讯云与GCP跨云服商VPC对联实践">https://kkscode.github.io/kksnote2/2019/10/25/post/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
